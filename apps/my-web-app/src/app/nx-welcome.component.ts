@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Device } from '@capacitor/device';
 
 /* eslint-disable */
 
@@ -846,5 +847,9 @@ nx affected:e2e</pre>
 export class NxWelcomeComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Device.getInfo().then((info) => {
+      console.log(info);
+    });
+  }
 }
